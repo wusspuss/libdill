@@ -1114,7 +1114,10 @@ DILL_EXPORT int dill_happyeyeballs_connect(
 #endif
 
 #endif
-
+struct dill_ctx_cr;
+/* Gets pointer to dill_ctx_cr - just smth to cling on to for */
+/* my coro-local variables imitation */
+DILL_EXPORT struct dill_ctx_cr *  dill_Getctx();
 #ifdef __cplusplus
 }
 #endif

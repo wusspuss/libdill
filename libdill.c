@@ -23,6 +23,7 @@
 #include <stdint.h>
 
 #include "cr.h"
+#include "ctx.h"
 #include "pollset.h"
 #include "utils.h"
 
@@ -80,4 +81,6 @@ int dill_fdout(int fd, int64_t deadline) {
 int dill_fdclean(int fd) {
     return dill_pollset_clean(fd);
 }
-
+DILL_EXPORT struct dill_ctx_cr *  dill_Getctx() {
+    return &dill_getctx->cr;
+}
